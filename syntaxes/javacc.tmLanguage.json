@@ -33,7 +33,7 @@
                 "match": ";"
             }, {
                 "name": "constant.language.javacc",
-                "match": "this"
+                "match": "this|new|null"
             }, {
                 "name": "constant.numeric.javacc",
                 "match": "[0-9]+(\\.[0-9]*)?f?"
