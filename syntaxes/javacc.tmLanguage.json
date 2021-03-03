@@ -18,7 +18,7 @@
                 "match": "\\b(TOKEN|SKIP|EOF|PARSER_BEGIN|PARSER_END|throws|public|private|class|static|import|return)\\b"
             }, {
                 "name": "keyword.operator.javacc",
-                "match": "\\+|\\||-|/|\\*|:|<|>|=|,"
+                "match": "\\+|\\||-|/|\\*|:|<|>|=|,|\\?"
             }, {
                 "name": "constant.character.javacc",
                 "match": ""
