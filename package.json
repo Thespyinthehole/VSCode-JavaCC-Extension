@@ -1,0 +1,25 @@
+{
+    "name": "javacc",
+    "displayName": "Javacc",
+    "description": "Syntax highlighting for Javacc",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.37.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "javacc",
+            "aliases": ["Javacc", "javacc"],
+            "extensions": [".jj"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "javacc",
+            "scopeName": "source.javacc",
+            "path": "./syntaxes/javacc.tmLanguage.json"
+        }]
+    }
+}

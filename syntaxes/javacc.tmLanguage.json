@@ -1,0 +1,67 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "javacc",
+    "patterns": [{
+            "include": "#comments"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#keywords"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.javacc",
+                "match": "\\b(TOKEN|SKIP|EOF|PARSER_BEGIN|PARSER_END|throws|public|private|class|static|import|return)\\b"
+            }, {
+                "name": "keyword.operator.javacc",
+                "match": "\\+|\\||-|/|\\*|:|<|>|=|,"
+            }, {
+                "name": "constant.character.javacc",
+                "match": ""
+            }, {
+                "name": "invalid.illegal.javacc",
+                "match": ""
+            }, {
+                "name": "storage.type.javacc",
+                "match": "\\b(void|String|int|char|boolean|float|double)\\b"
+            }, {
+                "name": "entity.name.function.javacc",
+                "match": ";"
+            }, {
+                "name": "constant.language.javacc",
+                "match": ""
+            }, {
+                "name": "constant.numeric.javacc",
+                "match": "[0-9]+(\\.[0-9]*)?f?"
+            }, {
+                "name": "support.function.javacc",
+                "match": ""
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.double.fortelangprime",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [{
+                "name": "constant.character.escape.fortelangprime",
+                "match": "\\\\."
+            }]
+        },
+        "comments": {
+            "patterns": [{
+                "name": "comment.line.number-sign.javacc",
+                "begin": "//",
+                "end": "\n"
+            }, {
+                "name": "comment.block.javacc",
+                "begin": "/\\*",
+                "end": "\\*/"
+            }]
+        }
+    },
+    "scopeName": "source.javacc"
+}
