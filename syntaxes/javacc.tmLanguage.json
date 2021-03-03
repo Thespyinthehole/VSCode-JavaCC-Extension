@@ -15,7 +15,7 @@
         "keywords": {
             "patterns": [{
                 "name": "keyword.control.javacc",
-                "match": "\\b(TOKEN|SKIP|EOF|PARSER_BEGIN|PARSER_END|throws|public|private|class|static|import|return)\\b"
+                "match": "\\b(TOKEN|SKIP|EOF|PARSER_BEGIN|PARSER_END|throws|public|private|class|static|import|return|while)\\b"
             }, {
                 "name": "keyword.operator.javacc",
                 "match": "\\+|\\||-|/|\\*|:|<|>|=|,|\\?"
