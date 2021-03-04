@@ -1,0 +1,85 @@
+$schema: 'https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json'
+name: javacc
+patterns:
+  - begin: '\b(options)\b\s*{'
+    beginCaptures:
+      '1':
+        name: keyword.other.javacc.options
+    patterns:
+      - name: keyword.control.javacc.options.options
+        match: >-
+          \b(BUILD_PARSER|BUILD_TOKEN_MANAGER|CACHE_TOKENS|CHOICE_AMBIGUITY_CHECK|COMMON_TOKEN_ACTION|DEBUG_LOOKAHEAD|DEBUG_PARSER|DEBUG_TOKEN_MANAGER|ERROR_REPORTING|FORCE_LA_CHECK|IGNORE_CASE|JAVA_UNICODE_ESCAPE|LOOKAHEAD|OTHER_AMBIGUITY_CHECK|OUTPUT_DIRECTORY|SANITY_CHECK|STATIC|SUPPORT_CLASS_VISIBILITY_PUBLIC|TOKEN_EXTENDS|TOKEN_FACTORY|TOKEN_MANAGER_USES_PARSER|UNICODE_INPUT|USER_CHAR_STREAM|USER_TOKEN_MANAGER)\b
+      - name: constant.language.javacc.options.values
+        match: \b(true|false)\b
+    end: '}'
+    endCaptures:
+      '1':
+        name: punctuation.terminator.javacc
+    name: javaccoptions
+    contentName: storage.modifier.package.java.javaccoptionsthing
+  - begin: '\b(PARSER_BEGIN)\b\(([A-Za-z_]+)\)'
+    beginCaptures:
+      '0':
+        name: entity.name.function.parserbeginclass
+      '2':
+        name: entity.name.class.parserbeginclass
+    patterns:
+      - include: source.java
+    end: '\b(PARSER_END)\b\(([A-Za-z_]+)\)'
+    endCaptures:
+      '0':
+        name: entity.name.function.parserbeginclass
+      '2':
+        name: entity.name.class.parserbeginclass
+    contentName: source.java
+  - match: \.
+    name: invalid.illegal.javacc
+  - name: entity.name.class.tokenTKEN
+    match: TOKEN
+  #- include: '#comments'
+  #- include: '#strings'
+  #- include: '#keywords'
+repository:
+  keywords:
+    patterns:
+      - name: keyword.control.javacc
+        match: >-
+          \b(TOKEN|SKIP|EOF|throws|public|private|class|static|import|return|while|abstract|extends|try|catch|if|else)\b
+      - name: entity.name.class.javacc2
+        match: '<\s*[A-Z_]+\s*:'
+      - name: entity.name.class.token
+        match: '<\s*[A-Z_]+\s*>'
+      - name: keyword.operator.javacc
+        match: '\+|\||-|/|\*|:|<|>|=|,|\?'
+      - name: constant.character.javacc
+        match: ''
+      - name: invalid.illegal.javacc
+        match: ''
+      - name: storage.type.javacc
+        match: \b(void|String|int|char|boolean|float|double)\b
+      - name: entity.name.function.javacc
+        match: ;
+      - name: constant.language.javacc
+        match: this|new|null
+      - name: constant.numeric.javacc
+        match: '[0-9]+(\.[0-9]*)?f?'
+      - name: support.function.javacc
+        match: ''
+      - {}
+  strings:
+    name: string.quoted.double.fortelangprime
+    begin: '"'
+    end: '"'
+    patterns:
+      - name: constant.character.escape.fortelangprime
+        match: \\.
+  comments:
+    patterns:
+      - name: comment.line.number-sign.javacc
+        begin: //
+        end: |+
+
+      - name: comment.block.javacc
+        begin: /\*
+        end: \*/
+scopeName: source.javacc

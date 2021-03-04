@@ -19,7 +19,10 @@
         "grammars": [{
             "language": "javacc",
             "scopeName": "source.javacc",
-            "path": "./syntaxes/javacc.tmLanguage.json"
+            "path": "./syntaxes/javacc.tmLanguage.json",
+            "embeddedLanguages": {
+                "source.java": "java"
+            }
         }]
     }
 }
