@@ -1,5 +1,9 @@
 # javacc README
 
+> To convert from YAML to JSON: 
+> Download yaml2json: https://github.com/bronze1man/yaml2json
+> `yaml2json < javacc.tmLanguage.yaml > javacc.tmLanguage.json`
+
 This is the README for your extension "javacc". After writing up a brief description, we recommend including the following sections.
 
 ## Features
